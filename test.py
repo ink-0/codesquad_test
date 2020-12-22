@@ -48,30 +48,33 @@ print()
 # 모든 함수 입력받았을 때 다 작동되는 지 테스트, 그러나 UUR처럼 연속된 입력에서는 오류 발생 확인
 inp=0
 while inp != 'Q':
-    inp = input('cube> ')
-    if inp == "U":
-        cube = U(cube, 'left')
-    elif inp == "U'":
-        cube = U(cube, 'right')
+    cmd = list(input('cube> '))
+    for i in range(len(cmd)):
+        inp=cmd.pop(0)
+        print(inp)
+        if inp == "U":
+            cube = U(cube, 'left')
+        elif inp == "U'":
+            cube = U(cube, 'right')
 
-    elif inp == "B":
-        cube = B(cube, 'right')
-    elif inp == "B'":
-        cube = B(cube, 'left')
+        elif inp == "B":
+            cube = B(cube, 'right')
+        elif inp == "B'":
+            cube = B(cube, 'left')
 
-    elif inp == "R":
-        cube = R(cube, 'up')
-    elif inp == "R'":
-        cube = R(cube, 'down')
+        elif inp == "R":
+            cube = R(cube, 'up')
+        elif inp == "R'":
+            cube = R(cube, 'down')
 
-    elif inp == "L":
-        cube = L(cube, 'down')
-    elif inp == "L'":
-        cube = L(cube, 'up')
+        elif inp == "L":
+            cube = L(cube, 'down')
+        elif inp == "L'":
+            cube = L(cube, 'up')
 
-    if inp=='Q':
-        print('bye~')
-        break
-    for i in cube:
-        print(*i)
-    print()
+        if inp=='Q':
+            print('bye~')
+            break
+        for i in cube:
+            print(*i)
+        print()
