@@ -1,6 +1,6 @@
 #step-2 평면큐브  테스트코드
 #U 테스트
-def U(cube,type): # U 테스트
+def U(cube,type):
     if type=='right':
         cube[0].insert(0,cube[0].pop()) # right 알고리즘 적용
     elif type=='left':
@@ -45,10 +45,16 @@ for i in cube:
     print(*i)
 print()
 
-# 모든 함수 입력받았을 때 다 작동되는 지 테스트, 그러나 UUR처럼 연속된 입력에서는 오류 발생 확인
+# UUR 작동확인, U'UUR'
 inp=0
 while inp != 'Q':
     cmd = list(input('cube> '))
+
+    while "'" in cmd:
+        if "'" in cmd:
+            cmd[cmd.index("'") - 1] += "'"
+            cmd.pop(cmd.index("'"))
+
     for i in range(len(cmd)):
         inp=cmd.pop(0)
         print(inp)
