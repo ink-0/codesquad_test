@@ -1,4 +1,4 @@
 inp='aa'
 while inp:
-    inp = input()
+    inp = list(input())
     print(inp.pop())
