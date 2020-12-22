@@ -1,6 +1,6 @@
 #step-2 평면큐브  테스트코드
 #U 테스트
-def U(cube,type): # U 테스트
+def U(cube,type):
     if type=='right':
         cube[0].insert(0,cube[0].pop()) # right 알고리즘 적용
     elif type=='left':
